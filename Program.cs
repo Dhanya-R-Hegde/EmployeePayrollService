@@ -9,7 +9,9 @@
             //EmployeePayrollOperations.InsertIntoTable();
             //EmployeePayrollOperations.DisplayData();
             //EmployeePayrollOperations.DisplaySpecificData();
-            EmployeePayrollOperations.AddColoumnsIntoTable();
+            //EmployeePayrollOperations.AddColoumnsIntoTable();
+            //EmployeePayrollOperations.DropColoumnsFromTable();
+            EmployeePayrollOperations.SetColumn();
         }
     }
 }

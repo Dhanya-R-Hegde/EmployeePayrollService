@@ -112,5 +112,25 @@ namespace EmployeePayrollService
             Console.WriteLine("Coloumn inserted successfully");
             con.Close();
         }
+
+        public static void DropColoumnsFromTable()
+        {
+            string query = "Alter table EmployeePayroll drop column Alphabet";
+            SqlCommand cmd = new SqlCommand(query, con);
+            con.Open();
+            cmd.ExecuteNonQuery();
+            Console.WriteLine("Columns droped successfully");
+            con.Close();
+        }
+
+        public static void SetColumn()
+        {
+            string query = "Update EmployeePayroll set Gender = 'M' where Name = 'Akshay'";
+            SqlCommand cmd = new SqlCommand(query, con);
+            con.Open();
+            cmd.ExecuteNonQuery();
+            Console.WriteLine("Columns set successfully");
+            con.Close();
+        }
     }
 }
