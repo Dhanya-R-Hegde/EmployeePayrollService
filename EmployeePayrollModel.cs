@@ -26,6 +26,18 @@ namespace EmployeePayrollService
 
         public double Salary { get; set; }
 
+        public EmployeePayrollModel()
+        {
+            this.Id = 0;
+            this.Name = string.Empty;
+            this.PhoneNumber = 0;
+            this.Salary = 0;
+            this.City = string.Empty;
+            this.Country = string.Empty;
+            this.PinCode = 0;
+            this.Salary = 0;
+            this.Gender = ' ';
+        }
 
     }
 }

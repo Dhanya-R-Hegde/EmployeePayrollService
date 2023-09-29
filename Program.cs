@@ -7,7 +7,8 @@
             //EmployeePayrollOperations.CreateDatabase();
             //EmployeePayrollOperations.CreateTable();
             //EmployeePayrollOperations.InsertIntoTable();
-            EmployeePayrollOperations.DisplayData();
+            //EmployeePayrollOperations.DisplayData();
+            EmployeePayrollOperations.DisplaySpecificData();
         }
     }
 }

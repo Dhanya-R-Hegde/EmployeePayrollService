@@ -74,5 +74,33 @@ namespace EmployeePayrollService
             }
             con.Close();
         }
+
+        public static void DisplaySpecificData()
+        {
+            EmployeePayrollModel model = new EmployeePayrollModel();
+            string query = "Select salary from EmployeePayroll where Name = 'Dhanya';";
+            SqlCommand cmd = new SqlCommand(query, con);
+            con.Open();
+            SqlDataReader sqlDataReader = cmd.ExecuteReader();
+            if (sqlDataReader.FieldCount <= 2)
+            {
+                Console.WriteLine("------Data------");
+                while (sqlDataReader.Read())
+                {
+                    //model.Id = Convert.ToInt32(sqlDataReader["Id"]);
+                    //model.Name = Convert.ToString(sqlDataReader["Name"]);
+                    //model.PhoneNumber = Convert.ToInt64(sqlDataReader["PhoneNumber"]);
+                    //model.Gender = Convert.ToChar(sqlDataReader["Gender"]);
+                    //model.StratDate = Convert.ToString(sqlDataReader["StartDate"]);
+                    //model.City = Convert.ToString(sqlDataReader["City"]);
+                    //model.Country = Convert.ToString(sqlDataReader["Country"]);
+                    //model.PinCode = Convert.ToInt64(sqlDataReader["PinCode"]);
+                    model.Salary = Convert.ToDouble(sqlDataReader["Salary"]);
+
+                    Console.WriteLine("Dhanya's Salary is  "+ model.Salary);
+                }
+            }
+            con.Close();
+        }
     }
 }
