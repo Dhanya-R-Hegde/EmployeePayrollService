@@ -5,7 +5,8 @@
         static void Main(string[] args)
         {
             //EmployeePayrollOperations.CreateDatabase();
-            EmployeePayrollOperations.CreateTable();
+            //EmployeePayrollOperations.CreateTable();
+            EmployeePayrollOperations.InsertIntoTable();
         }
     }
 }

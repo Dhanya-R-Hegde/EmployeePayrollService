@@ -36,5 +36,15 @@ namespace EmployeePayrollService
             Console.WriteLine("Table created successfully");
             con.Close();
         }
+
+        public static void InsertIntoTable()
+        {
+            string query = "Insert into EmployeePayroll values('Dhanya', 8431384824, 'F', '02/26/2001', 'Shimoga', 'India', 577421, 1000000.0)";
+            SqlCommand cmd = new SqlCommand(query, con);
+            con.Open();
+            cmd.ExecuteNonQuery();
+            Console.WriteLine("Data inserted successfully");
+            con.Close();
+        }
     }
 }
