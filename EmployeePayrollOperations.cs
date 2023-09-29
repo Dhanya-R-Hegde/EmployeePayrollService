@@ -102,5 +102,15 @@ namespace EmployeePayrollService
             }
             con.Close();
         }
+
+        public static void AddColoumnsIntoTable()
+        {
+            string query = "Alter table EmployeePayroll add Gender char(1);";
+            SqlCommand cmd = new SqlCommand(query, con);
+            con.Open();
+            cmd.ExecuteNonQuery();
+            Console.WriteLine("Coloumn inserted successfully");
+            con.Close();
+        }
     }
 }

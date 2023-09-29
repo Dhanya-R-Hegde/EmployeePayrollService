@@ -8,7 +8,8 @@
             //EmployeePayrollOperations.CreateTable();
             //EmployeePayrollOperations.InsertIntoTable();
             //EmployeePayrollOperations.DisplayData();
-            EmployeePayrollOperations.DisplaySpecificData();
+            //EmployeePayrollOperations.DisplaySpecificData();
+            EmployeePayrollOperations.AddColoumnsIntoTable();
         }
     }
 }
