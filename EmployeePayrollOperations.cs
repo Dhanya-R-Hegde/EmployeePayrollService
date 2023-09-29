@@ -24,5 +24,17 @@ namespace EmployeePayrollService
 
             con.Close();
         }
+
+        public static SqlConnection con = new SqlConnection("data source = (localdB)\\MSSQLLocalDB; initial catalog = PayrollServiceDatabase2; integrated security = true");
+
+        public static void CreateTable()
+        {
+            string query = "create table EmployeePayroll(Id bigint primary key identity(1, 1), Name varchar(20) not null, PhoneNumber bigint not null, Gender varchar(1) check(Gender in ('M', 'F')) not null, StartDate Date not null, City varchar(15) not null, Country varchar(15) not null, PinCode bigint not null, Salary float not null);";
+            SqlCommand cmd = new SqlCommand(query, con);
+            con.Open();
+            cmd.ExecuteNonQuery();
+            Console.WriteLine("Table created successfully");
+            con.Close();
+        }
     }
 }

@@ -4,7 +4,8 @@
     {
         static void Main(string[] args)
         {
-            EmployeePayrollOperations.CreateDatabase();
+            //EmployeePayrollOperations.CreateDatabase();
+            EmployeePayrollOperations.CreateTable();
         }
     }
 }
