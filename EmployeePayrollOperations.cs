@@ -46,5 +46,33 @@ namespace EmployeePayrollService
             Console.WriteLine("Data inserted successfully");
             con.Close();
         }
+
+        public static void DisplayData()
+        {
+            EmployeePayrollModel model = new EmployeePayrollModel();
+            string query = "Select * from EmployeePayroll";
+            SqlCommand cmd = new SqlCommand(query, con);
+            con.Open();
+            SqlDataReader sqlDataReader = cmd.ExecuteReader();
+            if (sqlDataReader.HasRows)
+            {
+                Console.WriteLine("------Data------");
+                while (sqlDataReader.Read())
+                {
+                    model.Id = Convert.ToInt32(sqlDataReader["Id"]);
+                    model.Name = Convert.ToString(sqlDataReader["Name"]);
+                    model.PhoneNumber = Convert.ToInt64(sqlDataReader["PhoneNumber"]);
+                    model.Gender = Convert.ToChar(sqlDataReader["Gender"]);
+                    model.StratDate = Convert.ToString(sqlDataReader["StartDate"]);
+                    model.City = Convert.ToString(sqlDataReader["City"]);
+                    model.Country = Convert.ToString(sqlDataReader["Country"]);
+                    model.PinCode = Convert.ToInt64(sqlDataReader["PinCode"]);
+                    model.Salary = Convert.ToDouble(sqlDataReader["Salary"]);
+                    
+                    Console.WriteLine("Id : {0}\nName : {1}\nPhoneNumber : {2}\nGender : {3}\nStartDate : {4}\nCity : {5}\nCountry : {6}\nPinCode : {7}\nSalary : {8}", model.Id, model.Name, model.PhoneNumber, model.Gender, model.StratDate, model.City, model.Country, model.PinCode, model.Salary);
+                }
+            }
+            con.Close();
+        }
     }
 }
